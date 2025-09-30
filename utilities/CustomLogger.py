@@ -1,9 +1,12 @@
 import inspect
 import logging
 import allure
-
+import os
 
 def customLogger():
+    # Asegura que el directorio exista
+    log_dir = os.path.join(os.path.dirname(__file__), '../reports')
+    os.makedirs(log_dir, exist_ok=True)
     # 1.) This is used to get the  class / method name from where this customLogger method is called
     logName = inspect.stack()[1][3]
 
