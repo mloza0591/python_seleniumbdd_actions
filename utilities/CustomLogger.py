@@ -17,8 +17,17 @@ def customLogger():
     logger.setLevel(logging.DEBUG)
 
     # 4.) Create the fileHandler to save the logs in the file
-    fileHandler = logging.FileHandler("../SeleniumBDDFW/reports/Code2lead.log", mode='a')
+    #fileHandler = logging.FileHandler("../SeleniumBDDFW/reports/Code2lead.log", mode='a')
+    # Obtener la ruta absoluta del directorio actual
+    base_dir = os.path.abspath(os.path.dirname(__file__))
 
+    # Ruta absoluta a la carpeta reports
+    reports_dir = os.path.join(base_dir, '..', 'reports')
+    os.makedirs(reports_dir, exist_ok=True)
+
+    # Ruta completa al archivo de log
+    log_file = os.path.join(reports_dir, 'Code2lead.log')
+    fileHandler = logging.FileHandler(log_file, mode='a')
     # 5.) Set the logLevel for fileHandler
     fileHandler.setLevel(logging.DEBUG)
 
