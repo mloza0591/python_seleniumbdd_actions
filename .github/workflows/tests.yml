@@ -34,7 +34,7 @@ jobs:
 
     - name: Run tests with behave and allure
       run: |
-        behave -f allure_behave.formatter:AllureFormatter -o allure-results
+        behave -t "@formdata" contactForm.feature -f allure_behave.formatter:AllureFormatter -o Allure_report
 
     - name: Generate Allure Report
       run: |
