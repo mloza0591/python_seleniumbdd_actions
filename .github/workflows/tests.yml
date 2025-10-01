@@ -34,11 +34,11 @@ jobs:
 
     - name: Run tests with behave and allure
       run: |
-        behave -t "@formdata" contactForm.feature -f allure_behave.formatter:AllureFormatter -o Allure_report
+        behave -t "@formdata" contactForm.feature -f allure_behave.formatter:AllureFormatter -o allure-results
 
     - name: Generate Allure Report
       run: |
-        allure generate Allure_report --clean -o allure-report
+        allure generate allure-results --clean -o allure-report
 
     - name: Upload Allure Report as artifact
       uses: actions/upload-artifact@v4
