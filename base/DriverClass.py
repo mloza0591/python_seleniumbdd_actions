@@ -41,7 +41,7 @@ class WebDriverClass:
             #options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
             #driver = webdriver.Chrome(service=service, options=options)
-            driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+            driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
             self.log.info("Chrome Driver is initializing")
 
         elif browserName == "firefox":
